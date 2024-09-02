@@ -1,18 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
+let alunos = [
+  { nome: "Savalo Horse", cursos: ["DS", "ADM"] },
+  { nome: "Josefina", cursos: ["ADM", "MA"] }
+]
+
 function App() {
-  const [count, setCount] = useState(0)
+
+
 
   return (
     <>
+      {alunos.map((aluno) => (
+        <div key={aluno.nome}>
+          <div>{aluno.nome}</div>
+          {aluno.cursos.map((curso, index) => (
+            <h2 key={index}>{curso}</h2>
+          ))}
+        </div>
+      ))}
 
-    <div>
-      <h1>TESTE</h1>
-    </div>
-              
     </>
   )
 }
